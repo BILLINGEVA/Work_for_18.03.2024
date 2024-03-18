@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Punktestandbewertung</title>
+</head>
+<body>
+    <form id="meinFormular">
+        <label for="userinput">Gib dein Punktezahl hier an:</label>
+        <input type="number" id="userinput" name="Eingabe">
+        <input type="submit" value="Absenden">
+    </form>
+    <p id="ergebnis"></p>
+
+    <script>
+        document.getElementById("meinFormular").addEventListener("submit", function(e){
+
+            e.preventDefault();
+
+            let Punktezahl = parseInt(document.getElementById("userinput").value);
+
+            if (Punktezahl < 60) {
+                document.getElementById("ergebnis").textContent = "nicht bestanden";
+            }
+
+            if (60 < Punktezahl <= 70) {
+                document.getElementById("ergebnis").textContent = "ausreichend";
+            }
+
+            if (70 < Punktezahl <= 80) {
+                document.getElementById("ergebnis").textContent = "befriedigend"; 
+            }
+            
+            if (80 < Punktezahl <= 90) {
+                document.getElementById("ergebnis").textContent = "gut";
+            }
+            if (Punktezahl > 90) {
+                document.getElementById("ergebnis").textContent = "sehr gut";
+            }
+           
+
+        });
+
+    </script>
+    
+</body>
+</html>
